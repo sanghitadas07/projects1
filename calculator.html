@@ -1,0 +1,76 @@
+<html>
+<title>calculator</title>
+<head>
+    <link rel="stylesheet" href="calcss.css">
+    <script>
+        function appendToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function clearDisplay() {
+            val = document.getElementById('display').value
+            len=(val.length)-1
+            val=val.slice(0,len)
+            document.getElementById('display').value=val
+
+        }
+
+        function calculate() {
+            try {
+                document.getElementById('display').value = eval(document.getElementById('display').value);
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+            }
+
+        }
+        function fun(){
+            document.getElementById('display').value='';
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+<center>
+    <div class="main" >
+        <div>
+            <input class="result" id="display" type="text" disabled>
+
+        </div>
+        <div >
+            <span> <input onclick="appendToDisplay('1')" class="one" type="button" value="1"></span>
+            <span> <input onclick="appendToDisplay('2')" class="two" type="button" value="2"></span>
+            <span> <input onclick="appendToDisplay('3')" class="three" type="button" value="3"></span>
+            <span> <input onclick="appendToDisplay('/')" class="shalsh" type="button" value="/"></span>
+
+        </div>
+
+        <div>
+            <span> <input onclick="appendToDisplay('4')" class="four" type="button" value="4"></span>
+            <span> <input onclick="appendToDisplay('5')" class="five" type="button" value="5"></span>
+            <span> <input onclick="appendToDisplay('6')" class="six" type="button" value="6"></span>
+            <span> <input onclick="appendToDisplay('*')" class="multi" type="button" value="x"></span>
+        </div>
+        <div>
+            <span> <input onclick="appendToDisplay('7')" class="seven" type="button" value="7"></span>
+            <span> <input onclick="appendToDisplay('8')" class="eight" type="button" value="8"></span>
+            <span> <input onclick="appendToDisplay('9')" class="nine" type="button" value="9"></span>
+            <span> <input onclick="appendToDisplay('+')" class="add" type="button" value="+"></span>
+        </div>
+        <div>
+            <span> <input  onclick="appendToDisplay('0')" class="zero" type="button" value="0"></span>
+            <span> <input onclick="appendToDisplay('.')" class="point" type="button" value="."></span>
+            <span> <input onclick="clearDisplay()" class="del" type="button" value="del"></span>
+            <span> <input onclick="appendToDisplay('-')" class="sub" type="button" value="-"></span>
+        </div>
+        <div>
+            <span> <input onclick="calculate('=')" class="equal" type="button" value="="></span>
+            <span> <input onclick="fun()" value="C" class="C" type="button"> </span>
+
+        </div>
+    </div>
+</center>
+</body>
+</html>
